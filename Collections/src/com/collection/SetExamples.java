@@ -1,8 +1,8 @@
 
+
 package com.collection;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.TreeSet;
 
 public class SetExamples {
@@ -47,19 +47,7 @@ public class SetExamples {
 		System.out.println("the stored items are.."+items.add("barbon"));
 		System.out.println("the stored items are.."+items);
 		System.out.println("the stored items are.."+items.isEmpty());//returns the set is empty or not
-		
-		for(String x:items)
-		{
-			System.out.println(x);
-		}
-		System.out.println("------------useing itarator---------");
-		Iterator<String> i=items.iterator();
-		while(i.hasNext())
-		{
-			System.out.println(i.next());
-		}
-	
-		
+		System.out.println("the stored items are.."+items);
 	}
 
 }
