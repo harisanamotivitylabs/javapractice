@@ -19,13 +19,9 @@ public class MapExample {
 		System.out.println("list is "+map);
 		
 		for(Integer key: map.keySet())
-		{
-			
-			System.out.println(key+"="+map.get(key));
-			
-			
+		{	
+			System.out.println(key+"="+map.get(key));	
 		}
-		
 		System.out.println("------------itarator----------------------");
 		
 		Iterator<Integer> itr = map.keySet().iterator();
