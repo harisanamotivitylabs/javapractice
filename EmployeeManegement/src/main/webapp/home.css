@@ -1,0 +1,39 @@
+@charset "UTF-8";
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    padding: 30;
+    cursor: pointer;
+    display: flex;
+  background: radial-gradient( #c2c2c2 ,#535353 65%);
+}
+h1{
+	display: flex;
+	 margin :20px;
+	 color:#3677fe ;
+	 margin-left: 300px;
+} 
+nav{
+    flex: 1;
+    text-align: bottom;
+    text-align: right;
+    margin-down:100px;
+}
+nav ul{
+    display: inline-block;
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color:#0000ff;
+}

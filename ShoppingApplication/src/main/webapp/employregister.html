@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body bgcolor="lightgreen" align="center">
+    <div bgcolor="red">
+     <h1>EMPLOYEE REGISTER</h1>
+     
+     <br><br>
+<a href="index.html" >HOME</a>&emsp;&emsp;&emsp;
+<a href="employregister.html" >EMPLOYEREGISTER</a>&emsp;&emsp;&emsp;
+<a href="employlogin.html" >EMPLOYEE LOGIN</a>&emsp;&emsp;&emsp;
+<a href="customerregister.html" >CUSTOMER REGISTER</a>&emsp;&emsp;&emsp;
+<a href="customerlogin.html" >CUSTOMER LOGIN</a>
+<br><br>
+    </div>
+    <form action="./employregister" method="post"   >
+     <table align="center" >
+       <tr>
+            <td>FULL NAME </td><td>  :   <input type="text" name="name" placeholder="Enter  Name"/></td>
+        </tr>      
+        <tr>
+             <td>MOBILE NUMBER </td><td>  :   <input type="NUMBER" name="mobile" placeholder="Enter Mobile Number"/></td>
+         </tr>
+           <tr>
+        <td>GENDER </td><td>  :   <input type="radio" name="gender" value="male" />MALE<input type="radio" name="gender" value="female" />FEMALE</td>
+         </tr>
+         <tr>
+           <td>EMAIL </td><td>  :   <input type="email" name="mail" placeholder="Enter Email id"/></td>
+     </tr>
+     <tr>
+           <td>PASSWORD </td><td>  :   <input type="password" name="psw" placeholder="Enter password"/></td>
+     </tr>
+     <tr>
+     <td>DEPARTMENT  </td><td>  :   <select name="department">
+      <option>--SELECT--</option>
+        <option value="ordermanegement">order manegement</option>
+        <option value="paymentmanegement">payment manegement</option>
+       <option value="return manegement">return manegement</option>
+         <option value="productmanegement">product manegement</option>
+      </select></td>
+    </tr>
+    <tr>
+     <td> </td><td><input type="submit" value="Register"  /></td>
+    </tr>
+   </table>
+                  
+  </form>
+</body>
+</html>

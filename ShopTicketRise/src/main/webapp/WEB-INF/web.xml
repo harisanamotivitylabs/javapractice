@@ -1,0 +1,12 @@
+<web-app>
+<servlet>
+<servlet-name>first</servlet-name>
+<servlet-class>com.shopping.TicketRaise</servlet-class>
+</servlet>
+
+
+<servlet-mapping>
+<servlet-name>first</servlet-name>
+<url-pattern>/riseticket</url-pattern>
+</servlet-mapping>
+</web-app>

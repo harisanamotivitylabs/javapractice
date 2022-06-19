@@ -24,7 +24,8 @@ public class EmployeeDataPortal {
 				switch(choice)
 				{
 			case 1:
-				{try {
+				{
+					try {
 				
 				PreparedStatement ps=con.prepareStatement("select * from employeedata;");
 				ResultSet rs=ps.executeQuery();
@@ -119,19 +120,16 @@ public class EmployeeDataPortal {
 					System.out.println(e);
 				}
 			   }
-			   default:
+			   default :
 				   System.out.println("enter valid option");
 			}
 				
 				System.out.println("if you want continue with service please select option");
 				choice=sc.nextInt();
-				if(choice<=0)
-				{
-					con.close();
-				}
-		
+				
 		}
-			
+			//System.out.println("invalid option your disconnected with database");
+			//con.close();
 
 	}
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>register</title>
+</head>
+<body align="center">
+<div id="form">
+<h1>MANAGER REGISTER</h1>
+   <form action="ManagerRegister" method="post"   >
+     <table align="center" >
+       <tr>
+            <td>FULL NAME </td><td>  :   <input type="text" name="name" placeholder="Enter  Name"/><br><br></td>
+        </tr>    
+        <tr>
+             <td>MOBILE NUMBER </td><td>  :   <input type="NUMBER" name="mobile" placeholder="Enter Mobile Number"/><br><br></td>
+         </tr>
+           <tr>
+        <td>GENDER </td><td>  :   <input type="radio" name="gender" value="male" />MALE<input type="radio" name="gender" value="female" />FEMALE<br><br></td>
+         </tr> 
+         <tr>
+           <td>EMAIL </td><td>  :   <input type="email" name="mail" placeholder="Enter Email id"/><br><br></td>
+     </tr>
+     <tr>
+           <td>PASSWORD </td><td>  :   <input type="password" name="psw" placeholder="Enter password"/><br><br></td>
+     </tr>
+     <tr>
+     <td>DEPARTMENT  </td><td>  :   <select name="department">
+      <option>--SELECT--</option>
+        <option value="hrdept">hrdept</option>
+        <option value="leavedept">LEAVEPORTAL</option>
+       <option value="QA">QA</option>
+         <option value="salseforce">salesforce</option>
+      </select></td>
+    </tr> 
+    
+    <tr>
+     <td> </td><td><input type="submit" value="Register"  /></td>
+    </tr>
+   </table>
+                  
+  </form>
+  </div>
+
+</body>
+</html>

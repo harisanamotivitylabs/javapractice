@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body bgcolor="cyan" align="center">
+<h1 background="red">CUSTOMER REGISTER FOR COMPLAINT</h1>
+<br><br>
+<a href="index.html" >HOME</a>&emsp;&emsp;&emsp;
+<a href="employregister.html" >EMPLOYEREGISTER</a>&emsp;&emsp;&emsp;
+<a href="employlogin.html" >EMPLOYEE LOGIN</a>&emsp;&emsp;&emsp;
+<a href="customerregister.html" >CUSTOMER REGISTER</a>&emsp;&emsp;&emsp;
+<a href="customerlogin.html" >CUSTOMER LOGIN</a><br><br><br>
+
+<form action="./customerregister" method="post" >
+            <table align="center">
+       <tr>
+            <td>FULL NAME </td><td>  :   <input type="text" name="name" placeholder="Enter  Name"/></td>
+        </tr>      
+        <tr>
+             <td>MOBILE NUMBER </td><td>  :   <input type="NUMBER" name="mobile" placeholder="Enter Mobile Number"/></td>
+         </tr>
+           <tr>
+       <td>GENDER </td><td>  :   <input type="radio" name="gender" value="male" />MALE<input type="radio" name="gender" value="female" />FEMALE</td>
+        </tr>
+        <tr>
+           <td>EMAIL </td><td>  :   <input type="email" name="mail" placeholder="Enter Email id"/></td>
+     </tr>
+      <tr>
+           <td>PASSWORD </td><td>  :   <input type="password" name="psw" placeholder="Enter password"/></td>
+     </tr>
+    <tr>
+     <td>QUERY  </td><td>  :   <select name="query">
+      <option>--SELECT--</option>
+        <option value="order issue">order issue</option>
+        <option value="payment issue">payment issue</option>
+       <option value="return issue">return issue</option>
+         <option value="item missmatch issue">item missmatch issue</option>
+         <option value="other issue">other issue</option>
+      </select></td>
+    </tr>
+
+    <tr>
+     <td> </td><td><input type="submit" value="Register"  /></td>
+    </tr>
+   </table>
+                  
+ </form>
+</body>
+</html>

@@ -1,19 +1,26 @@
 package com.library;
 
+import java.util.Scanner;
+
 public class Test {
 
 	public static void main(String[] args) {
 		
-		
-		Kidusers kuser =new  Kidusers(12,"kids");
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter your age ");
+		int age=sc.nextInt();
+		if(age<12)
+		{
+		Kidusers kuser =new  Kidusers(age,"kids");
 		kuser.registerAccount();
 		kuser.requestBook();
-		
-		
-		AdultUser auser=new  AdultUser(13,"fiction");
+		}
+		if(age>=12)
+		{
+		AdultUser auser=new  AdultUser(age,"fiction");
 		auser.registerAccount();
 		auser.requestBook();
-		
+		}
 		
 	}
 
