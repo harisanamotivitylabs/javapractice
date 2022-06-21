@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>profile</title>
 </head>
-<body>
+<body align="center" bgcolor="cyan">
+
 <% 
    Connection con=null;
 try{

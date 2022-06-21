@@ -48,6 +48,7 @@ public class EmployeeLogin extends HttpServlet {
 			if(rs.next())
 			{
 				hs.setAttribute("employeeid",rs.getInt(1));
+				hs.setAttribute("mobile",rs.getInt(4));
 				hs.setAttribute("mail", rs.getString("mail"));
 				response.sendRedirect("employeehome.html");
 				

@@ -23,7 +23,7 @@ public class ApplyLeave extends HttpServlet {
     
     public ApplyLeave() {
         super();
-        // TODO Auto-generated constructor stub
+       
     }
 
 	
@@ -32,22 +32,28 @@ public class ApplyLeave extends HttpServlet {
 		
 response.setContentType("text/html");
 		
+    
+
+
 		String name=request.getParameter("name");
-		String gender=request.getParameter("gender");
-		int mobile=Integer.parseInt(request.getParameter("mobile"));
-		String mail=request.getParameter("mail");
+		
+		
 		String department=request.getParameter("department");
 		String fdate=request.getParameter("fdate");
-		String ldate=request.getParameter("ldate");
+		String ldate=request.getParameter("tdate");
+		String reasion=request.getParameter("reasion");
 		
-		int days=Integer.parseInt(request.getParameter("days"));
+		int days=Integer.parseInt(request.getParameter("day"));
 		 HttpSession session = request.getSession();
+		 int mobile=(Integer)session.getAttribute("mobile");
+		 String mail=(String)session.getAttribute("mail");
+		
 		int id=(Integer)session.getAttribute("employeeid");
 		Connection con=null;
 		try {
 		
 		con=ConnectionDb.getDbConnection();
-		PreparedStatement ps=con.prepareStatement("insert into leaveportal(name,employeeid,mobile,mail,department,fdate,ldate,days,managername,status) values(?,?,?,?,?,?,?,?,?,?)");
+		PreparedStatement ps=con.prepareStatement("insert into leaveportal(name,employeeid,mobile,mail,department,fdate,ldate,days,reasion,managername,status) values(?,?,?,?,?,?,?,?,?,?,?)");
 		ps.setString(1, name);
 		ps.setInt(2, id);
 		ps.setInt(3, mobile);
@@ -56,8 +62,9 @@ response.setContentType("text/html");
 		ps.setString(6,fdate );
 		ps.setString(7,ldate );
 		ps.setInt(8, days);
-		ps.setString(9,"none" );
-		ps.setString(10,"pending" );
+		ps.setString(9,reasion );
+		ps.setString(10,"none" );
+		ps.setString(11,"pending" );
 		int i=ps.executeUpdate();
 		PrintWriter out=response.getWriter();
 		if(i!=0)

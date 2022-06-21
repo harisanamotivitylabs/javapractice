@@ -12,7 +12,7 @@ public class ConnectionClass {
 	String password="system";
 	Connection con=null;
 
-	try {
+	try { 
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {

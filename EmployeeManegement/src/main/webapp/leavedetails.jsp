@@ -6,10 +6,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body bgcolor="cyan">
 <h1>LEAVE PORTAL]</h1>
 <li><a href="employeelogin.html" target="secction" >APPLY FOR LEAVE</a>
 <li><a href="employeelogin.html" target="secction" >EMPLOYEE LOGOUT</a>
+<br><br><br>
+ <h2>EMPLOYEE LEAVEDETAILS</h2> 	  
+  <table border="1" width="300px" height="80px" cellpadding="20">
+  <tr><th>Serial no</th><th>Employee Name</th><th>Mail</th><th>Mobile</th><th>Department</th><th>Manager Name</th><th>Leave Status</th></tr>
 <% 
    Connection con=null;
 try{
@@ -22,11 +26,9 @@ try{
 
   while(rs.next()){
 	  %>
-  <h2>EMPLOYEE PROFILE</h2> 	  
-  <table border="1" width="300px" height="300px" cellpadding="20">
-  <tr><th>Serial no</th><th>Employee Name</th><th>Mail</th><th>Mobile</th><th>Department</th><th>Manager Name</th><th>Leave Status</th></tr>
+ 
   <tr><td><%=rs.getInt(1) %></td><td><%=rs.getString(2) %></td><td><%=rs.getString(5) %></td><td> <%=rs.getInt(4) %></td><td><%=rs.getString(6) %></td>
-  <td><%=rs.getString(11) %></td><td><%=rs.getString(12) %></td></tr>
+  <td><%=rs.getString(12) %></td><td><%=rs.getString(13) %></td></tr>
 
   <%   
      }

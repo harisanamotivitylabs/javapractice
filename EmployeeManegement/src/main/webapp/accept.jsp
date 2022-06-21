@@ -6,17 +6,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body bgcolor="cyan">
 <% 
 int id=Integer.parseInt(request.getParameter("employeeid"));
 int total=Integer.parseInt(request.getParameter("totalleave"));
 int reqleave=Integer.parseInt(request.getParameter("requestleave"));
 String status;
 String name=(String)session.getAttribute("mname");
-if(total>=reqleave)
+if(total>=reqleave&&reqleave<=2)
 {
-	status="accepted";
 	total=total-reqleave;
+	status="accepted";
+	
+	
 }
 else
 {
@@ -27,7 +29,7 @@ try{
   con=ConnectionDb.getDbConnection();
   
 
-   PreparedStatement ps=con.prepareStatement(" update leaveportal set managername=?, status=?,total_leaves=? where employeeid= ? ; " );
+   PreparedStatement ps=con.prepareStatement(" update leaveportal set managername=?, status=?,total_leaves=? where employeeid= ? and status='pending'" );
    ps.setString(1, name);
    ps.setString(2,status);
    ps.setInt(3,total);
