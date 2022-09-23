@@ -18,6 +18,7 @@ public class InsertPrepare {
 			ps.setString(4, "swis");
 			ps.setInt(5,28 );
 			int i=ps.executeUpdate();
+			
 			if(i!=0)
 				System.out.println(i+"inserted record successfully..");
 			else

@@ -30,14 +30,14 @@ public class ArrayListEx {
 		System.out.println(al.set(0,"GAVARNOR"));//replace with the specified index
 		al.add(1, "PM");
 		System.out.println("EMPLOYES ARE "+al.contains("PM"));//check element present or not
-		System.out.println("EMPLOYES ARE "+al.spliterator());//a Spliterator over the elements in this list
+		System.out.println("EMPLOYES ARE "+al.spliterator());//a Split iterator over the elements in this list
 		System.out.println("EMPLOYES ARE "+al.iterator());
-		System.out.println("------------useing foreach loop---------");
+		System.out.println("------------using foreach loop---------");
 		for(String x:al)
 		{
 			System.out.println(x);
 		}
-		System.out.println("------------useing itarator---------");
+		System.out.println("------------using itarator---------");
 		Iterator<String> i=al.iterator();
 		while(i.hasNext())
 		{

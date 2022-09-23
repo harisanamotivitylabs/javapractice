@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 12, 2017 5:29:20 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.zahangir.model.Indoor" table="indoor" catalog="restful_in_peace" optimistic-lock="version">
+        <id name="indoorId" type="java.lang.Integer">
+            <column name="indoor_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="admission" class="com.zahangir.model.Admission" fetch="select">
+            <column name="admission_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="specialist" class="com.zahangir.model.Specialist" fetch="select">
+            <column name="specialist_id" not-null="true" />
+        </many-to-one>
+        <property name="indoorDepartment" type="string">
+            <column name="indoor_department" length="45" not-null="true" />
+        </property>
+        <property name="indoorType" type="string">
+            <column name="indoor_type" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

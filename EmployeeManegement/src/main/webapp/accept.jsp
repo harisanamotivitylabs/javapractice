@@ -29,7 +29,7 @@ try{
   con=ConnectionDb.getDbConnection();
   
 
-   PreparedStatement ps=con.prepareStatement(" update leaveportal set managername=?, status=?,total_leaves=? where employeeid= ? and status='pending'" );
+   PreparedStatement ps=con.prepareStatement(" update leaveportal set managername=?, status=?,total_leaves=? where employeeid= ? and status='pending' ;" );
    ps.setString(1, name);
    ps.setString(2,status);
    ps.setInt(3,total);
@@ -37,9 +37,12 @@ try{
 int x=ps.executeUpdate();
 if(x!=0)
 {
+	
 	response.sendRedirect("leaverequest.jsp");
+	
 }
  %>
+ 
  <%   
      
    }

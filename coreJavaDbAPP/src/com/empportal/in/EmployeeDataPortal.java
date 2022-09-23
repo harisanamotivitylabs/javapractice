@@ -19,6 +19,7 @@ public class EmployeeDataPortal {
 			System.out.println(" 4.Delete Data ");
 			System.out.println(" Enter what service you want..?? ");
 			int choice=sc.nextInt();
+			
 			while(choice<=4)
 			{
 				switch(choice)
@@ -126,6 +127,7 @@ public class EmployeeDataPortal {
 				
 				System.out.println("if you want continue with service please select option");
 				choice=sc.nextInt();
+				
 				
 		}
 			//System.out.println("invalid option your disconnected with database");

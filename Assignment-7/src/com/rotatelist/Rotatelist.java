@@ -9,24 +9,19 @@ public class Rotatelist {
 			Scanner sc=new Scanner(System.in);
 			
 		   LinkedList<Integer> list = new LinkedList<Integer>();
-		   while(true) {
-			   System.out.println("enter integer list values...?");
-			   int i=sc.nextInt();
-			 
-		     System.out.println("if you want to insert values say 'yes'/'no'");
-		     String ch=sc.next();
-		   if(ch.equals("yes"))
-		     {
-		    	 list.add(i);	
-		     }  
-		     if(ch.equals("no"))
-		     {
-		    	 list.add(i);
-		    	 System.out.println("list elementas "+list);
-		    	 break;
+		   
+			   System.out.println("enter integer list size ?");
+			   int size=sc.nextInt();
+			   System.out.println("enter list values");
+			 for(int i=1;i<=size;++i) 
+			 {
+				 int n=sc.nextInt();
+				 list.add(n);
 		     }
-		    
-		   }
+		 	
+		    	 System.out.println("list elementas "+list);
+		 
+		  
 		   System.out.println("plese enter postion to rotate the list ..");
 		   int k=sc.nextInt();
 		   Rotatelist c= new Rotatelist() ;

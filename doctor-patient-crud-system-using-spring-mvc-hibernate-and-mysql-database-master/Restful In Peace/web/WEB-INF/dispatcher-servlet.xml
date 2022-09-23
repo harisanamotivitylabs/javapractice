@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.zahangir"/>
+    <mvc:annotation-driven/>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+    <bean id="propertyConfiguration" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="/WEB-INF/jdbc.properties"/>
+    </bean>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+          p:driverClassName="${jdbc.driverClassName}"
+          p:url="${jdbc.databaseUrl}"
+          p:username="${jdbc.userName}"
+          p:password="${jdbc.password}"/>
+        
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="mappingResources">
+            <list>
+                <value>com/zahangir/model/Admission.hbm.xml</value>
+                <value>com/zahangir/model/Indoor.hbm.xml</value>
+                <value>com/zahangir/model/Mi.hbm.xml</value>
+                <value>com/zahangir/model/Outdoor.hbm.xml</value>
+                <value>com/zahangir/model/Patient.hbm.xml</value>
+                <value>com/zahangir/model/ReleasedPatient.hbm.xml</value>
+                <value>com/zahangir/model/Specialist.hbm.xml</value>
+                <value>com/zahangir/model/User.hbm.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <value>
+                hibernate.dialect=org.hibernate.dialect.MySQLDialect
+                hibernate.show_sql=true
+            </value>
+        </property>
+               
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+        
+    </bean>
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/message"/>
+    </bean>
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/specialist/specialistinfo"/>
+            <mvc:mapping path="/mi/miinfo"/>
+            <mvc:mapping path="/allpatient"/>
+            <mvc:mapping path="/specialist/allsp"/>
+            <mvc:mapping path="/mi/allmi"/>
+            <mvc:mapping path="/sp/success"/>
+            <mvc:mapping path="/specialist/sedit"/>
+            <mvc:mapping path="/sp/edit/**"/>
+            <mvc:mapping path="/specialist/edit/**"/>
+            <mvc:mapping path="/specialist/delete/**"/>
+            <mvc:mapping path="/specialist/sadd"/>
+            <mvc:mapping path="/specialist/specialistinfo"/>
+            <mvc:mapping path="/mi/miinfo"/>
+            <mvc:mapping path="/mi/madd"/>
+            <mvc:mapping path="/mi/medit"/>
+            <mvc:mapping path="/editmi"/>
+            <mvc:mapping path="/mi/delete/**"/>
+            <mvc:mapping path="/mi/edit/**"/>
+            <mvc:mapping path="/miedit/**"/>
+            <bean id="" class="com.zahangir.logincontrolinterceptor.LoginControlInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+</beans>
